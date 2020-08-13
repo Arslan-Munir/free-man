@@ -1,0 +1,36 @@
+<GridLayout rows="*,*,*,*" columns="*" class="main__container">
+
+<!--    <GridLayout row="0" col="0" rows="*,auto" (swipe)="onImageSwipe()">-->
+<!--        <Image-->
+<!--                row="0"-->
+<!--                class="top__image"-->
+<!--                stretch="aspectFill"-->
+<!--                src="{{images[img]}}">-->
+<!--        </Image>-->
+
+<!--        <StackLayout row="1" orientation="horizontal" horizontalAlignment="center">-->
+<!--            <StackLayout *ngFor="let i of images">-->
+<!--                <Label class="fas dot" text="&#xf111;" [ngClass]="{'active_dot' : img !== imgCarousal}"></Label>-->
+<!--            </StackLayout>-->
+<!--        </StackLayout>-->
+<!--    </GridLayout>-->
+
+    <GridLayout row="0" col="0" rows="auto,auto">
+            <Label row="0" class="h2 m-15" text="Recommended"></Label>
+            <ScrollView orientation="horizontal" row="1" scrollBarIndicatorVisible="false">
+                <StackLayout orientation="horizontal">
+                    <StackLayout *ngFor="let i of images">
+                        <GridLayout rows="auto,auto,auto">
+                            <Image src="{{i}}" class="top__image" row="0"></Image>
+                            <Label row="1" class="h3 m-15" text="Title"></Label>
+                            <Label row="2" class="h4 m-15" text="RS:"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+    </GridLayout>
+
+    <GridLayout row="1" col="0" rows="*" columns="*">
+        <Label text="Product slider"></Label>
+    </GridLayout>
+</GridLayout>

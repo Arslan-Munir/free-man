@@ -1,4 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
+import { Carousel, CarouselItem } from "nativescript-carousel";
+import { registerElement } from "@nativescript/angular/element-registry";
+
+registerElement("Carousel", () => Carousel);
+registerElement("CarouselItem", () => CarouselItem);
 
 @Component({
     selector: "home",
@@ -6,9 +11,6 @@ import { Component, OnInit } from "@angular/core";
     styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-
-    img = 0;
-    imgCarousal = 0;
 
     images = [
         "https://image.shutterstock.com/image-photo/salad-fresh-fruits-berries-600w-100844995.jpg",
@@ -27,19 +29,4 @@ export class HomeComponent implements OnInit {
         // Init your component properties here.
     }
 
-    onImageSwipe() {
-        if (this.img === 0) {
-            this.img = 1;
-            this.imgCarousal = 1;
-        } else if (this.img === 1) {
-            this.img = 2;
-            this.imgCarousal = 2;
-        } else if (this.img === 2) {
-            this.img = 3;
-            this.imgCarousal = 3;
-        } else {
-            this.img = 0;
-            this.imgCarousal = 0;
-        }
-    }
 }

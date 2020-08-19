@@ -4,19 +4,37 @@
 }
 
 .carousel__image{
-  border-radius: 5%;
-  margin: 0 10 0 10;
+  border-radius: 5;
+}
+
+.recommended__label {
+  font-size: 20;
+  font-weight: bold;
 }
 
 .recommended__item{
-  border-width: 1;
-  border-color: #1d1d1d;
-  border-radius: 5;
+  //width: 100;
+  padding-right: 10;
 }
 
 .recommended__item_image{
   width: 100;
   height: 100;
-  border-radius: 5%;
-  margin: 0 5 0 5;
+  border-radius: 15;
+}
+
+.recommended__item_details{
+  margin-left: 5;
+}
+
+.recommended__item_label {
+  width: 100;
+  color: #686874;
+  font-size: 16;
+}
+
+.recommended__item_price {
+  color: #686874;
+  font-size: 12;
+  padding: 0 0 -5 0;
 }

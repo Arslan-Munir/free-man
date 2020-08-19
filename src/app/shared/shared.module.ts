@@ -6,6 +6,7 @@ import { SettingsComponent } from "~/app/shared/components/settings/settings.com
 import { FeaturedComponent } from "~/app/shared/components/featured/featured.component";
 import { SharedRoutingModule } from "~/app/shared/shared-routing.module";
 import { ActionBarComponent } from "~/app/shared/components/action-bar/action-bar.component";
+import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.directive";
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { ActionBarComponent } from "~/app/shared/components/action-bar/action-ba
         SearchComponent,
         SettingsComponent,
         FeaturedComponent,
-        ActionBarComponent
+        ActionBarComponent,
+        LabelMaxLinesDirective
     ],
     schemas: [
         NO_ERRORS_SCHEMA
@@ -27,7 +29,8 @@ import { ActionBarComponent } from "~/app/shared/components/action-bar/action-ba
         SearchComponent,
         SettingsComponent,
         FeaturedComponent,
-        ActionBarComponent
+        ActionBarComponent,
+        LabelMaxLinesDirective
     ]
 })
 export class SharedModule { }

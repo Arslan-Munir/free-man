@@ -20,6 +20,7 @@
     font-weight: 400;
 }
 
+
 // Common page class
 .page__content {
     &-icon,
@@ -49,5 +50,9 @@
 
 .is-selected{
     color: $complementary;
+}
+
+.label{
+    font-family: "Baloo Tamma 2", "BalooTamma2-Regular";
 }
 

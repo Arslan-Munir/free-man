@@ -12,17 +12,18 @@ registerElement("CarouselItem", () => CarouselItem);
 })
 export class HomeComponent implements OnInit {
 
-    images = [
-        "https://image.shutterstock.com/image-photo/salad-fresh-fruits-berries-600w-100844995.jpg",
-        "https://image.shutterstock.com/image-photo/bowl-healthy-fresh-fruit-salad-600w-264191042.jpg",
-        "https://image.shutterstock.com/image-photo/tropical-fruit-salad-yoghurt-glass-600w-1052586221.jpg",
-        "https://image.shutterstock.com/image-photo/fruit-salad-crystal-bowl-on-600w-621791648.jpg",
-        "https://image.shutterstock.com/image-photo/tropical-fruit-salad-yoghurt-glass-600w-1052586221.jpg",
-        "https://image.shutterstock.com/image-photo/bowl-healthy-fresh-fruit-salad-600w-264191042.jpg"
-    ];
+    images = [];
 
     constructor() {
         // Use the component constructor to inject providers.
+        this.images = [
+           "https://dummyimage.com/600x400/8c8be8/fff.jpg",
+           "https://dummyimage.com/600x400/59a8d6/fff.jpg",
+           "https://dummyimage.com/600x400/59c5d6/fff.jpg",
+           "https://dummyimage.com/600x400/59d6d4/fff.jpg",
+           "https://dummyimage.com/600x400/52d8b4/fff.jpg",
+           "https://dummyimage.com/600x400/7beda5/fff.jpg"
+        ];
     }
 
     ngOnInit(): void {

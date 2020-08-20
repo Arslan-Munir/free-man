@@ -3,14 +3,25 @@
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton ios:visibility="collapsed" icon="{{androidIcon}}"></NavigationButton>
+    <NavigationButton
+            class="fas icon__android"
+            ios:visibility="collapsed"
+            icon="{{androidIcon}}"
+            (tap)="performAction()"></NavigationButton>
     <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="{{iosIcon}}" android:visibility="collapsed"
-                ios.position="left">
-    </ActionItem>
-    <Label text="{{text}}"></Label>
+
+    <ActionItem
+            class="fas icon"
+            icon="{{iosIcon}}"
+            android:visibility="collapsed"
+            ios.position="left"
+            (tap)="performAction()"></ActionItem>
+
+    <Label
+            class="fas"
+            text="{{text}}"></Label>
 </ActionBar>

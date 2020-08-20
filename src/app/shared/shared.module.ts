@@ -7,6 +7,8 @@ import { FeaturedComponent } from "~/app/shared/components/featured/featured.com
 import { SharedRoutingModule } from "~/app/shared/shared-routing.module";
 import { ActionBarComponent } from "~/app/shared/components/action-bar/action-bar.component";
 import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.directive";
+import { ProductComponent } from "~/app/shared/components/product/product.component";
+import { NativeScriptRouterModule } from "@nativescript/angular/router";
 
 @NgModule({
     imports: [
@@ -19,6 +21,7 @@ import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.
         SettingsComponent,
         FeaturedComponent,
         ActionBarComponent,
+        ProductComponent,
         LabelMaxLinesDirective
     ],
     schemas: [
@@ -30,6 +33,7 @@ import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.
         SettingsComponent,
         FeaturedComponent,
         ActionBarComponent,
+        ProductComponent,
         LabelMaxLinesDirective
     ]
 })

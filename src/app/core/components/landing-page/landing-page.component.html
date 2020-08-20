@@ -1,11 +1,9 @@
-<ActionBar>
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-                ios.position="left">
-    </ActionItem>
-    <Label text="{{text}}"></Label>
-</ActionBar>
-
+<action-bar
+        android-icon="font://&#xf0c9;"
+        ios-icon="&#xf0c9;"
+        [to-navigate]="openDrawer"
+        text="{{text}}"
+></action-bar>
 
 <GridLayout class="page__content" rows="*,auto">
 
@@ -27,20 +25,15 @@
 
     <GridLayout row="1" rows="*" columns="*,*,*," borderTopWidth="1" borderTopColor="#a9a9a9">
         <StackLayout orientation="vertical" row="0" col="0" (tap)="changeTabView(1, 'Home')">
-            <!--                     borderColor="#a9a9a9" borderRightWidth="1" borderTopWidth="1" borderTopRightRadius="5">-->
             <Label class="page__content-icon tab__view-icon fas" text="&#xf015;"  [ngClass]="{'is-selected' : tabOption === 1}"></Label>
-            <!--            <Label class="page__content-placeholder" text="Home"></Label>-->
         </StackLayout>
 
         <StackLayout orientation="vertical" row="0" col="1" (tap)="changeTabView(2, 'Categories')">
-            <!--                     borderColor="#a9a9a9" borderRightWidth="1" borderTopWidth="1" borderTopRightRadius="5" borderTopLeftRadius="5">-->
             <Label class="page__content-icon tab__view-icon fas" text="&#xf022;" [ngClass]="{'is-selected' : tabOption === 2}"></Label>
-            <!--            <Label class="page__content-placeholder" text="Categories"></Label>-->
         </StackLayout>
 
         <StackLayout orientation="vertical" row="0" col="2" (tap)="changeTabView(3, 'Accounts')">
             <Label class="page__content-icon tab__view-icon fas" text="&#xf500;" [ngClass]="{'is-selected' : tabOption === 3}"></Label>
-            <!--            <Label class="page__content-placeholder" text="Account"></Label>-->
         </StackLayout>
     </GridLayout>
 </GridLayout>

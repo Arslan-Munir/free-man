@@ -1,4 +1,7 @@
 
+.home__label{
+  color: #686874;
+}
 .main__container{
   margin-top: 5;
 }
@@ -13,12 +16,15 @@
 }
 
 .recommended__item{
-  //width: 100;
-  padding-right: 10;
+  width: 100;
+  margin-right: 10;
+}
+
+.all__items{
+  width: 100;
 }
 
 .recommended__item_image{
-  width: 100;
   height: 100;
   border-radius: 15;
 }
@@ -27,14 +33,21 @@
   margin-left: 5;
 }
 
-.recommended__item_label {
+.recommended__item_name {
   width: 100;
-  color: #686874;
   font-size: 16;
+  margin: -2 0 0 0;
+}
+
+.recommended__item_variations{
+  margin: -10 0 0 0;
+}
+
+.recommended__item_variation {
+  margin-right: 2;
 }
 
 .recommended__item_price {
-  color: #686874;
   font-size: 12;
-  padding: 0 0 -5 0;
+  margin: -8 0 0 0;
 }

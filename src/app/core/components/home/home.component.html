@@ -26,57 +26,28 @@
 
             <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
                 <StackLayout orientation="horizontal">
-                    <StackLayout class="recommended__item" *ngFor="let image of images">
+                    <StackLayout
+                            class="recommended__item"
+                            *ngFor="let image of images"
+                            (tap)="goToProduct()">
                         <Image [src]="image" class="recommended__item_image" stretch="aspectFill"></Image>
                         <StackLayout class="recommended__item_details">
                             <Label
-                                    class="label recommended__item_label"
+                                    class="label home__label recommended__item_name"
                                     text="Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
                                     textWrap="false"></Label>
-                            <StackLayout orientation="horizontal" class="w-100">
-                                <Label text="variation" class="m-2"></Label>
-                                <Label text="variation" class="m-2"></Label>
-                                <Label text="variation" class="m-2"></Label>
-                            </StackLayout>
-                            <Label class="label recommended__item_price" text="Price"></Label>
+                                <StackLayout orientation="horizontal" class="recommended__item_variations">
+                                    <Label
+                                            text="ab cd, ab cd, ab cd, ab cd, ab cd, ab cd"
+                                            class="label home__label recommended__item_variation">
+                                    </Label>
+                                </StackLayout>
+                            <Label class="label home__label recommended__item_price" text="Price"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
         </StackLayout>
-
-<!--        <GridLayout row="1"  class="m-t-10" rows="*,auto">-->
-<!--            <Label row="0" class="h2" text="Recommended"></Label>-->
-
-<!--            <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">-->
-
-<!--                <GridLayout class="m-t-30" row="1" columns="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto">-->
-
-<!--                    <StackLayout col="0">-->
-<!--                            <Image stretch="aspectFit" borderRadius="5" [src]="images[0]" class="recommended__item_image"></Image>-->
-<!--&lt;!&ndash;                    <GridLayout class="recommended__item" col="0" rows="*,*,*" columns="auto">&ndash;&gt;-->
-<!--                        <Label class="h3" text="Title 1"></Label>-->
-<!--                        <Label class="h3" text="Price"></Label>-->
-
-<!--&lt;!&ndash;                    </GridLayout>&ndash;&gt;-->
-<!--                    </StackLayout>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="1" text="Title 2"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="2" text="Title 3"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="3" text="Title 4"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="4" text="Title 5"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="5" text="Title 6"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="6" text="Title 7"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="7" text="Title 8"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="8" text="Title 9"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="9" text="Title 10"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="10" text="Title 11"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="11" text="Title 12"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="12" text="Title 13"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="13" text="Title 14"></Label>-->
-<!--                    <Label width="60" height="50" class="h3 m-15" col="14" text="Title 15"></Label>-->
-<!--                </GridLayout>-->
-<!--            </ScrollView>-->
-<!--        </GridLayout>-->
 
         <GridLayout row="2" height="150" class="m-t-15">
             <Carousel
@@ -102,17 +73,28 @@
             </Carousel>
         </GridLayout>
 
-        <GridLayout row="4" height="150" class="m-t-15">
-            <Carousel
-                    [items]="images"
-                    android:indicatorAnimation="worm" indicatorColor="#595d62" indicatorOffset="0, 20" showIndicator="true">
-                <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
-                    <GridLayout>
-                        <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>
-                    </GridLayout>
-                </CarouselItem>
-            </Carousel>
-        </GridLayout>
+        <FlexboxLayout row="4" class="m-t-15"
+                       flexWrap="wrap" justifyContent="space-around">
+            <StackLayout
+                    class="all__items"
+                    *ngFor="let image of images"
+                    (tap)="goToProduct()">
+                <Image [src]="image" class="recommended__item_image" stretch="aspectFill"></Image>
+                <StackLayout class="recommended__item_details">
+                    <Label
+                            class="label home__label recommended__item_name"
+                            text="Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
+                            textWrap="false"></Label>
+                    <StackLayout orientation="horizontal" class="recommended__item_variations">
+                        <Label
+                                text="ab cd, ab cd, ab cd, ab cd, ab cd, ab cd"
+                                class="label home__label recommended__item_variation">
+                        </Label>
+                    </StackLayout>
+                    <Label class="label home__label recommended__item_price" text="Price"></Label>
+                </StackLayout>
+            </StackLayout>
+        </FlexboxLayout>
 
     </GridLayout>
 

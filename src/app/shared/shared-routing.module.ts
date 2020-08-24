@@ -5,16 +5,19 @@ import { BrowseComponent } from "~/app/shared/components/browse/browse.component
 import { SearchComponent } from "~/app/shared/components/search/search.component";
 import { FeaturedComponent } from "~/app/shared/components/featured/featured.component";
 import { SettingsComponent } from "~/app/shared/components/settings/settings.component";
+import { CartComponent } from "~/app/shared/components/cart/cart.component";
 
 const routes: Routes = [
-    { path: "browse", component: BrowseComponent },
-    { path: "search", component: SearchComponent },
-    { path: "featured", component: FeaturedComponent },
-    { path: "settings", component: SettingsComponent }
+    {path: "browse", component: BrowseComponent},
+    {path: "search", component: SearchComponent},
+    {path: "featured", component: FeaturedComponent},
+    {path: "settings", component: SettingsComponent},
+    {path: "cart", component: CartComponent}
 ];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
     exports: [NativeScriptRouterModule]
 })
-export class SharedRoutingModule { }
+export class SharedRoutingModule {
+}

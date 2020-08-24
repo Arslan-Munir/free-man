@@ -9,6 +9,7 @@ import { ActionBarComponent } from "~/app/shared/components/action-bar/action-ba
 import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.directive";
 import { ProductComponent } from "~/app/shared/components/product/product.component";
 import { NativeScriptRouterModule } from "@nativescript/angular/router";
+import { CartComponent } from "~/app/shared/components/cart/cart.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { NativeScriptRouterModule } from "@nativescript/angular/router";
         FeaturedComponent,
         ActionBarComponent,
         ProductComponent,
+        CartComponent,
         LabelMaxLinesDirective
     ],
     schemas: [

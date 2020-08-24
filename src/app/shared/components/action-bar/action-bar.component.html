@@ -8,6 +8,7 @@
             ios:visibility="collapsed"
             icon="{{androidIcon}}"
             (tap)="performAction()"></NavigationButton>
+
     <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
@@ -24,4 +25,19 @@
     <Label
             class="fas"
             text="{{text}}"></Label>
+
+    <ActionItem
+            ios.position="right"
+            android.position="actionBar"
+            (tap)="goToCart()"
+    *ngIf="showCart">
+        <!--        <DockLayout borderColor="#a52a2a" borderWidth="2">-->
+        <!--                <Label class="fas cart" dock="left" text="{{cartIcon}}"></Label>-->
+        <!--                <Label class="cart__items_count" dock="top" text="{{cartItemsCount}}"></Label>-->
+        <!--        </DockLayout>-->
+        <AbsoluteLayout>
+            <Label class="label cart__items_count" top="-12" left="12" text="{{cartItemsCount}}"></Label>
+            <Label class="fas cart" text="{{cartIcon}}"></Label>
+        </AbsoluteLayout>
+    </ActionItem>
 </ActionBar>

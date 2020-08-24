@@ -13,10 +13,8 @@
                     showIndicator="true"
                     ios:finite = "true"
                     ios:autoPagingInterval="5">
-                <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
-                    <GridLayout>
-                        <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>
-                    </GridLayout>
+                <CarouselItem *ngFor="let item of images" verticalAlignment="middle" >
+                        <Image class="m-2 carousel__image" [src]="item" stretch="aspectFill"></Image>
                 </CarouselItem>
             </Carousel>
         </GridLayout>

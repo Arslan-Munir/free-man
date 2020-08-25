@@ -2,4 +2,41 @@
         android-icon="font://&#xf100;"
         ios-icon="&#xf100;"
         text="Product"></action-bar>
-<Label text="Product page works"></Label>
+
+<GridLayout rows="*,auto" columns="*">
+
+    <ScrollView scrollBarIndicatorVisible="false">
+        <FlexboxLayout flexDirection="column" row="0" col="0">
+            <FlexboxLayout flexDirection="column">
+                <Image class="main-photo" src="{{toDisplayPhoto}}" stretch="aspectFill"></Image>
+                <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+                    <GridLayout class="photos" rows="auto" columns="*,*,*,*,*,*">
+                        <Image class="photo" col="0" src="{{images[0]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[0])"></Image>
+                        <Image class="photo" col="1" src="{{images[1]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[1])"></Image>
+                        <Image class="photo" col="2" src="{{images[2]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[2])"></Image>
+                        <Image class="photo" col="3" src="{{images[3]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[3])"></Image>
+                        <Image class="photo" col="4" src="{{images[4]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[4])"></Image>
+                        <Image class="photo" col="5" src="{{images[5]}}" stretch="aspectFill"
+                               (tap)="changePhoto(images[5])"></Image>
+                    </GridLayout>
+                </ScrollView>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="column" flexWrap="wrap" class="product__details">
+                <Label text="Name" class="label name"></Label>
+                <Label text="Price" class="label price"></Label>
+                <HtmlView [html]="description" class="label description"></HtmlView>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </ScrollView>
+
+    <Button text="Add to cart" row="1" col="0" class="btn-cart"></Button>
+
+</GridLayout>
+
+

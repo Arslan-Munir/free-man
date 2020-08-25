@@ -6,12 +6,24 @@ import { LandingPageComponent } from "~/app/core/components/landing-page/landing
 import { CategoryComponent } from "~/app/core/components/category/category.component";
 import { SignInComponent } from "~/app/core/components/sign-in/sign-in.component";
 import { SharedModule } from "~/app/shared/shared.module";
+import { TNSImageModule } from "nativescript-image/angular";
+import * as imageModule from "nativescript-image";
+import * as applicationModule from "@nativescript/core/application";
+
+if (applicationModule.android) {
+    applicationModule.on(applicationModule.launchEvent, () => {
+        imageModule.initialize({
+            isDownsampleEnabled: true
+        });
+    });
+}
 
 @NgModule({
     imports: [
         CoreRoutingModule,
         NativeScriptModule,
-        SharedModule
+        SharedModule,
+        TNSImageModule
     ],
     declarations: [
         LandingPageComponent,
@@ -23,4 +35,5 @@ import { SharedModule } from "~/app/shared/shared.module";
         NO_ERRORS_SCHEMA
     ]
 })
-export class CoreModule { }
+export class CoreModule {
+}

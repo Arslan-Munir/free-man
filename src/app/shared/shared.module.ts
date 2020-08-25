@@ -8,7 +8,6 @@ import { SharedRoutingModule } from "~/app/shared/shared-routing.module";
 import { ActionBarComponent } from "~/app/shared/components/action-bar/action-bar.component";
 import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.directive";
 import { ProductComponent } from "~/app/shared/components/product/product.component";
-import { NativeScriptRouterModule } from "@nativescript/angular/router";
 import { CartComponent } from "~/app/shared/components/cart/cart.component";
 
 @NgModule({

@@ -18,7 +18,9 @@
 }
 
 .product__details{
-  margin-left: 5;
+  margin: 0 15 0 15;
+  padding-bottom: -50;
+
   //vertical-align: stretch;
   //horizontal-align: left;
 }
@@ -33,10 +35,8 @@
 
 .description{
   font-size: 14;
-  padding-bottom: -50;
 }
 
 .btn-cart{
-  height: 50;
-  width: 100;
+  margin: 0;
 }

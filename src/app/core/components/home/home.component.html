@@ -26,21 +26,21 @@
                 <StackLayout orientation="horizontal">
                     <StackLayout
                             class="recommended__item"
-                            *ngFor="let image of images"
-                            (tap)="goToProduct()">
-                        <Image [src]="image" class="recommended__item_image" stretch="aspectFill"></Image>
+                            *ngFor="let product of products"
+                            (tap)="goToProduct(product)">
+                        <Image src="{{product.mainPhoto}}" class="recommended__item_image" stretch="aspectFill"></Image>
                         <StackLayout class="recommended__item_details">
                             <Label
                                     class="label home__label recommended__item_name"
-                                    text="Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
+                                    text="{{product.name}} + Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
                                     textWrap="false"></Label>
                                 <StackLayout orientation="horizontal" class="recommended__item_variations">
                                     <Label
-                                            text="ab cd, ab cd, ab cd, ab cd, ab cd, ab cd"
+                                            text="{{product.variations.join(', ')}}"
                                             class="label home__label recommended__item_variation">
                                     </Label>
                                 </StackLayout>
-                            <Label class="label home__label recommended__item_price" text="Price"></Label>
+                            <Label class="label home__label recommended__item_price" text="{{product.price}}"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
@@ -75,21 +75,21 @@
                        flexWrap="wrap" justifyContent="space-around">
             <StackLayout
                     class="all__items"
-                    *ngFor="let image of images"
+                    *ngFor="let product of products"
                     (tap)="goToProduct()">
-                <Image [src]="image" class="recommended__item_image" stretch="aspectFill"></Image>
+                <Image src="{{product.mainPhoto}}" class="recommended__item_image" stretch="aspectFill"></Image>
                 <StackLayout class="recommended__item_details">
                     <Label
                             class="label home__label recommended__item_name"
-                            text="Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
+                            text="{{product.name}} + Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
                             textWrap="false"></Label>
                     <StackLayout orientation="horizontal" class="recommended__item_variations">
                         <Label
-                                text="ab cd, ab cd, ab cd, ab cd, ab cd, ab cd"
+                                text="{{product.variations.join(', ')}}"
                                 class="label home__label recommended__item_variation">
                         </Label>
                     </StackLayout>
-                    <Label class="label home__label recommended__item_price" text="Price"></Label>
+                    <Label class="label home__label recommended__item_price" text="{{product.price}}"></Label>
                 </StackLayout>
             </StackLayout>
         </FlexboxLayout>

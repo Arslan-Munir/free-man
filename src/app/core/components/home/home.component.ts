@@ -3,6 +3,8 @@ import { Carousel, CarouselItem } from "nativescript-carousel";
 import { registerElement } from "@nativescript/angular/element-registry";
 import { RouterLink } from "@angular/router";
 import { RouterExtensions } from "@nativescript/angular/router";
+import { ProductService } from "~/app/shared/services/product.service";
+import { Product } from "~/app/shared/models/product.model";
 
 registerElement("Carousel", () => Carousel);
 registerElement("CarouselItem", () => CarouselItem);
@@ -16,7 +18,10 @@ export class HomeComponent implements OnInit {
 
     images = [];
 
-    constructor(private routerExtensions: RouterExtensions) {
+    products: Array<Product> = [];
+
+    constructor(private productService: ProductService,
+                private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.
         this.images = [
            "https://dummyimage.com/600x400/8c8be8/fff.jpg",
@@ -29,10 +34,10 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+        this.products = this.productService.getAll();
     }
 
-    goToProduct() {
-        this.routerExtensions.navigateByUrl("/product");
+    goToProduct(product: Product) {
+        this.routerExtensions.navigateByUrl(`/product/${product.id}`);
     }
 }

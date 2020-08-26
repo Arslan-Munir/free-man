@@ -7,7 +7,7 @@ import { ProductComponent } from "~/app/shared/components/product/product.compon
 const routes: Routes = [
     { path: "", component: LandingPageComponent },
     { path: "home", component: LandingPageComponent },
-    { path: "product", component: ProductComponent }
+    { path: "product/:id", component: ProductComponent }
 ];
 
 @NgModule({

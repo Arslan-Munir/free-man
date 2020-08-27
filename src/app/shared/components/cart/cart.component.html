@@ -3,4 +3,7 @@
         ios-icon="&#xf100;"
         [show-cart]="false"
         text="Cart"></action-bar>
-<Label text="Cart page works"></Label>
+
+<StackLayout *ngFor="let p of products"  class="p-15">
+    <Label text="{{p.name}}"></Label>
+</StackLayout>

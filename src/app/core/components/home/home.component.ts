@@ -5,6 +5,7 @@ import { RouterLink } from "@angular/router";
 import { RouterExtensions } from "@nativescript/angular/router";
 import { ProductService } from "~/app/shared/services/product.service";
 import { Product } from "~/app/shared/models/product.model";
+import { CartService } from "~/app/shared/services/cart.service";
 
 registerElement("Carousel", () => Carousel);
 registerElement("CarouselItem", () => CarouselItem);

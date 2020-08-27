@@ -25,7 +25,12 @@
         </FlexboxLayout>
     </ScrollView>
 
-    <Button text="Add to cart" row="1" col="0" class="btn-primary btn-cart"></Button>
+    <Button
+            row="1" col="0"
+            class="btn-primary btn-cart"
+            text="Add to cart"
+            (tap)="addToCart()">
+    </Button>
 
 </GridLayout>
 

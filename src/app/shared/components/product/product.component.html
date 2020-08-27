@@ -10,21 +10,10 @@
             <FlexboxLayout flexDirection="column">
                 <Image class="main-photo" src="{{toDisplayPhoto}}" stretch="aspectFill"></Image>
                 <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
-                    <GridLayout class="photos" rows="auto" columns="*,*,*,*,*,*,*,*,*,*"  *ngFor="let image of product.images; let col = index">
-                        <Image class="photo" row="0" col="{{col}}" src="{{image}}" stretch="aspectFill"
+                    <StackLayout orientation="horizontal">
+                        <Image class="photo" src="{{image}}" stretch="aspectFill" *ngFor="let image of product.images;"
                                (tap)="changePhoto(image)"></Image>
-                    </GridLayout>
-
-<!--                        <Image class="photo" col="1" src="{{images[1]}}" stretch="aspectFill"-->
-<!--                               (tap)="changePhoto(images[1])"></Image>-->
-<!--                        <Image class="photo" col="2" src="{{images[2]}}" stretch="aspectFill"-->
-<!--                               (tap)="changePhoto(images[2])"></Image>-->
-<!--                        <Image class="photo" col="3" src="{{images[3]}}" stretch="aspectFill"-->
-<!--                               (tap)="changePhoto(images[3])"></Image>-->
-<!--                        <Image class="photo" col="4" src="{{images[4]}}" stretch="aspectFill"-->
-<!--                               (tap)="changePhoto(images[4])"></Image>-->
-<!--                        <Image class="photo" col="5" src="{{images[5]}}" stretch="aspectFill"-->
-<!--                               (tap)="changePhoto(images[5])"></Image>-->
+                    </StackLayout>
                 </ScrollView>
             </FlexboxLayout>
 

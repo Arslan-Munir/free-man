@@ -18,7 +18,15 @@
             </FlexboxLayout>
 
             <FlexboxLayout flexDirection="column" flexWrap="wrap" class="product__details">
-                <Label text="{{product.name}}" class="label name"></Label>
+                <DockLayout>
+                    <Label dock="left" text="{{product.name}}" class="label name pull-left"></Label>
+                    <FlexboxLayout class="pull-right" dock="right" alignItems="center">
+                        <Label text="Quantity" class="m-r-4 label quantity"></Label>
+                        <Label text="&#xf055;" class="m-r-4 change__quantity-icon fas" (tap)="increaseQuantityByOne()"></Label>
+                        <Label text="{{product.quantity}}" class="m-r-4 label quantity__count"></Label>
+                        <Label text="&#xf056;" class="change__quantity-icon fas" (tap)="decreaseQuantityByOne()"></Label>
+                    </FlexboxLayout>
+                </DockLayout>
                 <Label text="{{product.price}}" class="label price"></Label>
                 <HtmlView [html]="product.description" class="label description"></HtmlView>
             </FlexboxLayout>
@@ -33,4 +41,3 @@
     </Button>
 
 </GridLayout>
-

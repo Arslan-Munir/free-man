@@ -4,6 +4,6 @@
         [show-cart]="false"
         text="Cart"></action-bar>
 
-<StackLayout *ngFor="let p of products"  class="p-15">
-    <Label text="{{p.name}}"></Label>
+<StackLayout class="p-15">
+    <Label text="{{p.name}}" *ngFor="let p of products"></Label>
 </StackLayout>

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { Observable, ReplaySubject } from "rxjs";
 import { Product } from "~/app/shared/models/product.model";
 
 @Injectable({
@@ -7,11 +7,8 @@ import { Product } from "~/app/shared/models/product.model";
 })
 export class CartService {
     private products: Array<Product> = [];
-    private subject = new Subject<any>();
+    private subject = new ReplaySubject<any>();
     private cartItemCount = 0;
-
-    constructor() {
-    }
 
     add(product: Product) {
         this.products.push(product);
@@ -31,4 +28,3 @@ export class CartService {
         return this.subject.asObservable();
     }
 }
-

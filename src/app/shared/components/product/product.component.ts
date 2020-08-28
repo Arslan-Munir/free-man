@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
 
     ngOnInit(): void {
         this.product = this.productService.getAll().find((x) => x.id === this.productId);
+        this.product.quantity = 1;
         this.toDisplayPhoto = this.product.mainPhoto;
         this.cartService.notifyForCartCount();
     }
@@ -31,5 +32,17 @@ export class ProductComponent implements OnInit {
 
     addToCart() {
         this.cartService.add(this.product);
+    }
+
+    increaseQuantityByOne() {
+        ++this.product.quantity;
+    }
+
+    decreaseQuantityByOne() {
+        if (this.product.quantity - 1 < 1) {
+            return;
+        } else {
+            --this.product.quantity;
+        }
     }
 }

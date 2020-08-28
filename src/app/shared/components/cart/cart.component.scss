@@ -1,0 +1,23 @@
+
+.cart__item{
+  border-radius: 5;
+  border-width: 2;
+  border-color: #686874;
+  margin: 5 15 5 15;
+  padding: 5;
+}
+
+.cart__item_image{
+  border-radius: 100;
+  height: 90;
+  width: 90;
+}
+
+.change__quantity__cart-icon{
+  font-size: 20;
+}
+
+.cart_quantity__count{
+  font-size: 20;
+  font-weight: bold;
+}

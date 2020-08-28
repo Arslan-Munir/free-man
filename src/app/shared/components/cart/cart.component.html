@@ -4,6 +4,33 @@
         [show-cart]="false"
         text="Cart"></action-bar>
 
-<StackLayout class="p-15">
-    <Label text="{{p.name}}" *ngFor="let p of products"></Label>
-</StackLayout>
+<ScrollView scrollBarIndicatorVisible="false">
+    <StackLayout>
+        <StackLayout class="cart__item" *ngFor="let p of products">
+            <GridLayout rows="*,*,*" columns="*,*,*">
+                <StackLayout row="0" col="0" orientation="horizontal">
+                    <Label text="Name:"></Label>
+                    <Label text="{{p.name}}"></Label>
+                </StackLayout>
+                <StackLayout row="1" col="0" orientation="horizontal">
+                    <Label text="Price:"></Label>
+                    <Label text="{{p.price}}"></Label>
+                </StackLayout>
+                <StackLayout row="2" col="0" orientation="horizontal">
+                    <Label text="Quantity:"></Label>
+                    <Label text="{{p.quantity}}"></Label>
+                </StackLayout>
+
+                <StackLayout row="3" col="1" orientation="horizontal">
+                    <Label text="&#xf055;" class="m-r-4 change__quantity__cart-icon fas" (tap)="++p.quantity"></Label>
+                    <Label text="{{p.quantity}}" class="m-r-4 label cart_quantity__count"></Label>
+                    <Label text="&#xf056;" class="change__quantity__cart-icon fas" (tap)="--p.quantity"></Label>
+                </StackLayout>
+
+                <StackLayout rowSpan="3" col="2" class="pull-right">
+                    <Image src="{{p.mainPhoto}}" class="cart__item_image" stretch="aspectFill"></Image>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

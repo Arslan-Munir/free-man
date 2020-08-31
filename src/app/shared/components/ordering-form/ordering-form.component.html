@@ -4,4 +4,23 @@
         [show-cart]="false"
         text="Ordering Form"></action-bar>
 
-<Label text="Ordering form works"></Label>
+<StackLayout class="m-5" borderColor="#a52a2a" borderWidth="1">
+    <Label text="Summary" horizontalAlignment="center" class="label cart__summary"></Label>
+<!--    <StackLayout borderColor="#a52a2a" borderWidth="1">-->
+    <ScrollView scrollBarIndicatorVisible="false">
+        <GridLayout rows="auto" columns="* * * * *" borderColor="blue" borderWidth="1">
+            <Label text="Name" row="0" colSpan="2" class="cart__summary-table-heading"></Label>
+            <Label text="Price" row="0" col="2" class="cart__summary-table-heading"></Label>
+            <Label text="Quantity" row="0" col="3" class="cart__summary-table-heading"></Label>
+            <Label text="Total Price" row="0" col="4" class="cart__summary-table-heading"></Label>
+        </GridLayout>
+
+        <GridLayout rows="auto" columns="* * * * *" borderColor="blue" borderWidth="1" *ngFor="let p of productsInCart">
+            <Label text="Name" row="0" colSpan="2" class="cart__summary-table-heading"></Label>
+            <Label text="Price" row="0" col="2" class="cart__summary-table-heading"></Label>
+            <Label text="Quantity" row="0" col="3" class="cart__summary-table-heading"></Label>
+            <Label text="Total Price" row="0" col="4" class="cart__summary-table-heading"></Label>
+        </GridLayout>
+    </ScrollView>
+<!--    </StackLayout>-->
+</StackLayout>

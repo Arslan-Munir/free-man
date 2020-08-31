@@ -35,7 +35,7 @@ export class CartService {
 
     increaseQuantityByOne(product: Product) {
         ++product.quantity;
-        product.price = product.price * product.quantity;
+        // product.price = product.price * product.quantity;
     }
 
     decreaseQuantityByOne(product: Product) {
@@ -43,7 +43,7 @@ export class CartService {
             return;
         } else {
             --product.quantity;
-            product.price = product.price / product.quantity;
+            // product.price = product.price / product.quantity;
         }
     }
 

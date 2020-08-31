@@ -35,14 +35,10 @@ export class ProductComponent implements OnInit {
     }
 
     increaseQuantityByOne() {
-        ++this.product.quantity;
+        this.cartService.increaseQuantityByOne(this.product);
     }
 
     decreaseQuantityByOne() {
-        if (this.product.quantity - 1 < 1) {
-            return;
-        } else {
-            --this.product.quantity;
-        }
+        this.cartService.decreaseQuantityByOne(this.product);
     }
 }

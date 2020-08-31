@@ -11,7 +11,20 @@ export class CartService {
     private cartItemCount = 0;
 
     add(product: Product) {
-        this.products.push(product);
+        if (this.existInCart(product)) {
+            this.increaseQuantityByOne(product);
+        } else {
+            this.products.push(product);
+            this.cartItemCount = this.products.length;
+            this.notifyForCartCount();
+        }
+    }
+
+    remove(product: Product) {
+        const index = this.products.indexOf(product, 0);
+        if (index > -1) {
+            this.products.splice(index, 1);
+        }
         this.cartItemCount = this.products.length;
         this.notifyForCartCount();
     }
@@ -20,11 +33,29 @@ export class CartService {
         return this.products;
     }
 
+    increaseQuantityByOne(product: Product) {
+        ++product.quantity;
+        product.price = product.price * product.quantity;
+    }
+
+    decreaseQuantityByOne(product: Product) {
+        if (product.quantity - 1 < 1) {
+            return;
+        } else {
+            --product.quantity;
+            product.price = product.price / product.quantity;
+        }
+    }
+
     notifyForCartCount() {
         this.subject.next(this.cartItemCount);
     }
 
     getCartCount(): Observable<number> {
         return this.subject.asObservable();
+    }
+
+    private existInCart(product: Product): boolean {
+        return this.products.some((p) => p === product);
     }
 }

@@ -9,6 +9,7 @@ import { ActionBarComponent } from "~/app/shared/components/action-bar/action-ba
 import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.directive";
 import { ProductComponent } from "~/app/shared/components/product/product.component";
 import { CartComponent } from "~/app/shared/components/cart/cart.component";
+import { OrderingFormComponent } from "~/app/shared/components/ordering-form/ordering-form.component";
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import { CartComponent } from "~/app/shared/components/cart/cart.component";
         ActionBarComponent,
         ProductComponent,
         CartComponent,
+        OrderingFormComponent,
         LabelMaxLinesDirective
     ],
     schemas: [

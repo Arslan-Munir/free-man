@@ -20,22 +20,22 @@ export class ActionBarComponent implements OnInit {
     @Input("text") text = "";
     @Input("show-cart") showCart = true;
 
-    cartIcon = "";
+    cartIcon = String.fromCharCode(0xf291);
     cartItemsCount = 0;
 
-    constructor(@Inject(DEVICE) private device: Device,  private routerExtensions: RouterExtensions,
+    constructor(@Inject(DEVICE) private device: Device, private routerExtensions: RouterExtensions,
                 private cart: CartService) {
-        if (device.os === platformNames.android) {
-            this.cartIcon = String.fromCharCode(0xf77d);
-        } else if (device.os === platformNames.ios) {
-            this.cartIcon = String.fromCharCode(0xf77d);
-        }
+        // if (device.os === platformNames.android) {
+        //     this.cartIcon = String.fromCharCode(0xf77d);
+        // } else if (device.os === platformNames.ios) {
+        //     this.cartIcon = String.fromCharCode(0xf77d);
+        // }
     }
 
     ngOnInit(): void {
-       this.cart.getCartCount().subscribe((count) => {
-           this.cartItemsCount = count;
-       });
+        this.cart.getCartCount().subscribe((count) => {
+            this.cartItemsCount = count;
+        });
     }
 
     openDrawer() {

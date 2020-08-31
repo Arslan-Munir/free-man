@@ -4,33 +4,67 @@
         [show-cart]="false"
         text="Cart"></action-bar>
 
-<ScrollView scrollBarIndicatorVisible="false">
-    <StackLayout>
-        <StackLayout class="cart__item" *ngFor="let p of products">
-            <GridLayout rows="*,*,*" columns="*,*,*">
-                <StackLayout row="0" col="0" orientation="horizontal">
-                    <Label text="Name:"></Label>
-                    <Label text="{{p.name}}"></Label>
-                </StackLayout>
-                <StackLayout row="1" col="0" orientation="horizontal">
-                    <Label text="Price:"></Label>
-                    <Label text="{{p.price}}"></Label>
-                </StackLayout>
-                <StackLayout row="2" col="0" orientation="horizontal">
-                    <Label text="Quantity:"></Label>
-                    <Label text="{{p.quantity}}"></Label>
-                </StackLayout>
+<ng-container *ngIf="products.length > 0; then whenCartHasItems else whenCartIsEmpty">
 
-                <StackLayout row="3" col="1" orientation="horizontal">
-                    <Label text="&#xf055;" class="m-r-4 change__quantity__cart-icon fas" (tap)="++p.quantity"></Label>
-                    <Label text="{{p.quantity}}" class="m-r-4 label cart_quantity__count"></Label>
-                    <Label text="&#xf056;" class="change__quantity__cart-icon fas" (tap)="--p.quantity"></Label>
-                </StackLayout>
+</ng-container>
 
-                <StackLayout rowSpan="3" col="2" class="pull-right">
-                    <Image src="{{p.mainPhoto}}" class="cart__item_image" stretch="aspectFill"></Image>
+<ng-template #whenCartHasItems>
+    <GridLayout rows="*,auto" columns="*">
+
+        <ScrollView scrollBarIndicatorVisible="false">
+            <StackLayout row="0" col="0">
+                <StackLayout class="cart__item" *ngFor="let p of products">
+                    <GridLayout rows="*,*,*" columns="*,*,*">
+                        <StackLayout row="0" col="0" orientation="horizontal">
+                            <Label text="Name:"></Label>
+                            <Label text="{{p.name}}"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" orientation="horizontal">
+                            <Label text="Price:"></Label>
+                            <Label text="{{p.price}}"></Label>
+                        </StackLayout>
+                        <StackLayout row="2" col="0" orientation="horizontal">
+                            <Label text="Quantity:"></Label>
+                            <Label text="{{p.quantity}}"></Label>
+                        </StackLayout>
+
+                        <FlexboxLayout row="3" col="1" alignItems="center">
+                            <Label text="&#xf055;" class="m-r-4 change__quantity__cart-icon fas"
+                                   (tap)="increaseQuantityByOne(p)"></Label>
+                            <Label text="{{p.quantity}}" class="m-r-4 label cart_quantity__count"></Label>
+                            <Label text="&#xf056;" class="change__quantity__cart-icon fas"
+                                   (tap)="decreaseQuantityByOne(p)"></Label>
+                        </FlexboxLayout>
+
+                        <DockLayout rowSpan="3" col="2" class="pull-right">
+                            <Image src="{{p.mainPhoto}}" dock="left" class="cart__item_image"
+                                   stretch="aspectFill"></Image>
+                            <Label text="&#xf057;" dock="right" class="remove__from-cart fas"
+                                   (tap)="removeFromCart(p)"></Label>
+                        </DockLayout>
+                    </GridLayout>
                 </StackLayout>
-            </GridLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <Button
+                row="1" col="0"
+                class="btn-primary btn-cart"
+                text="Place Order"
+                (tap)="placeOrder()">
+        </Button>
+
+    </GridLayout>
+</ng-template>
+
+<ng-template #whenCartIsEmpty>
+    <FlexboxLayout justifyContent="center" alignItems="center" flexWrap="wrap">
+        <StackLayout>
+            <Label text="Cart is empty!" class="label empty__cart" horizontalAlignment="center"></Label>
+            <FlexboxLayout justifyContent="center" alignItems="center">
+                <Label text="&#xf067; " class=" fas"></Label>
+                <Label text="Some products to continue." class="label empty__cart"></Label>
+            </FlexboxLayout>
         </StackLayout>
-    </StackLayout>
-</ScrollView>
+    </FlexboxLayout>
+</ng-template>

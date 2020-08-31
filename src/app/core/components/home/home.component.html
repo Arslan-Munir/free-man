@@ -76,7 +76,7 @@
             <StackLayout
                     class="all__items"
                     *ngFor="let product of products"
-                    (tap)="goToProduct()">
+                    (tap)="goToProduct(product)">
                 <Image src="{{product.mainPhoto}}" class="recommended__item_image" stretch="aspectFill"></Image>
                 <StackLayout class="recommended__item_details">
                     <Label

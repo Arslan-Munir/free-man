@@ -1,5 +1,6 @@
+<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
 
-<ScrollView>
+<ScrollView *ngIf="!busy">
 
     <GridLayout rows="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto" class="m-5">
 
@@ -11,10 +12,10 @@
                     indicatorColor="#595d62"
                     indicatorOffset="0, 15"
                     showIndicator="true"
-                    ios:finite = "true"
+                    ios:finite="true"
                     ios:autoPagingInterval="5">
-                <CarouselItem *ngFor="let item of images" verticalAlignment="middle" >
-                        <Image class="m-2 carousel__image" [src]="item" stretch="aspectFill"></Image>
+                <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
+                    <Image class="m-2 carousel__image" [src]="item" stretch="aspectFill"></Image>
                 </CarouselItem>
             </Carousel>
         </GridLayout>
@@ -34,12 +35,12 @@
                                     class="label home__label recommended__item_name"
                                     text="{{product.name}} + Name Name Name Name Name Name Name Name Name NameNameNameNameNameName"
                                     textWrap="false"></Label>
-                                <StackLayout orientation="horizontal" class="recommended__item_variations">
-                                    <Label
-                                            text="{{product.variations.join(', ')}}"
-                                            class="label home__label recommended__item_variation">
-                                    </Label>
-                                </StackLayout>
+                            <StackLayout orientation="horizontal" class="recommended__item_variations">
+                                <Label
+                                        text="{{product.variations.join(', ')}}"
+                                        class="label home__label recommended__item_variation">
+                                </Label>
+                            </StackLayout>
                             <Label class="label home__label recommended__item_price" text="{{product.price}}"></Label>
                         </StackLayout>
                     </StackLayout>
@@ -50,7 +51,8 @@
         <GridLayout row="2" height="150" class="m-t-15">
             <Carousel
                     [items]="images"
-                    android:indicatorAnimation="worm" indicatorColor="#595d62" indicatorOffset="0, 20" showIndicator="true">
+                    android:indicatorAnimation="worm" indicatorColor="#595d62" indicatorOffset="0, 20"
+                    showIndicator="true">
                 <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
                     <GridLayout>
                         <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>
@@ -62,7 +64,8 @@
         <GridLayout row="3" height="150" class="m-t-15">
             <Carousel
                     [items]="images"
-                    android:indicatorAnimation="worm" indicatorColor="#595d62" indicatorOffset="0, 20" showIndicator="true">
+                    android:indicatorAnimation="worm" indicatorColor="#595d62" indicatorOffset="0, 20"
+                    showIndicator="true">
                 <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
                     <GridLayout>
                         <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>

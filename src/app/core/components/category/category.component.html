@@ -1,2 +1,3 @@
+<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
 
-<Label text="Category works"></Label>
+<Label text="Category works" *ngIf="!busy"></Label>

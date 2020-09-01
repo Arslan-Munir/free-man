@@ -3,7 +3,9 @@
         ios-icon="&#xf100;"
         text="Product"></action-bar>
 
-<GridLayout rows="*,auto" columns="*">
+<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
+
+<GridLayout rows="*,auto" columns="*" *ngIf="!busy">
 
     <ScrollView scrollBarIndicatorVisible="false">
         <FlexboxLayout flexDirection="column" row="0" col="0">

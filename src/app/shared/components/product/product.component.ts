@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "~/app/shared/services/product.service";
 import { Product } from "~/app/shared/models/product.model";
@@ -10,6 +10,7 @@ import { CartService } from "~/app/shared/services/cart.service";
     styleUrls: ["./product.component.scss"]
 })
 export class ProductComponent implements OnInit {
+    busy = true;
     productId = 0;
     product: Product;
     toDisplayPhoto = "";
@@ -20,10 +21,13 @@ export class ProductComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.product = this.productService.getAll().find((x) => x.id === this.productId);
-        this.product.quantity = 1;
-        this.toDisplayPhoto = this.product.mainPhoto;
-        this.cartService.notifyForCartCount();
+        setTimeout(() => {
+            this.busy = false;
+            this.product = this.productService.getAll().find((x) => x.id === this.productId);
+            this.product.quantity = 1;
+            this.toDisplayPhoto = this.product.mainPhoto;
+            this.cartService.notifyForCartCount();
+        }, 1000);
     }
 
     changePhoto(url: string) {

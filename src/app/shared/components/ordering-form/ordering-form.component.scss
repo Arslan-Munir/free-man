@@ -4,7 +4,21 @@
   font-weight: bold;
 }
 
-.cart__summary-table-heading{
+.cart__summary-table{
+    margin: 5;
+}
+
+.cart__summary-table-head{
+  border-bottom-width: 2;
+  border-bottom-color: #1d1d1d;
+}
+
+.grand__total, .cart__summary-table-heading{
   font-size: 14;
   font-weight: bold;
 }
+
+.cart__summary-table-body{
+  font-size: 12;
+}
+

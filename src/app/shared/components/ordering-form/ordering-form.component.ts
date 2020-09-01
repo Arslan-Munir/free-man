@@ -9,15 +9,22 @@ import { Product } from "~/app/shared/models/product.model";
     styleUrls: ["./ordering-form.component.scss"]
 })
 
-export class OrderingFormComponent implements OnInit{
+export class OrderingFormComponent implements OnInit {
 
+    test: Array<number> = [];
     productsInCart: Array<Product> = [];
+    grandTotal = 0;
 
     constructor(private cartService: CartService, private orderService: OrderingService) {
+
     }
 
     ngOnInit(): void {
+        for (let i = 0; i < 500; i++) {
+            this.test.push(i);
+        }
         this.productsInCart = this.cartService.getCartProducts();
+        this.productsInCart.forEach((x) => (this.grandTotal = (this.grandTotal + (x.price * x.quantity))));
     }
 
     calculateOrderSummary() {

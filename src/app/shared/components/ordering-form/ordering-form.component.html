@@ -4,23 +4,26 @@
         [show-cart]="false"
         text="Ordering Form"></action-bar>
 
-<StackLayout class="m-5" borderColor="#a52a2a" borderWidth="1">
-    <Label text="Summary" horizontalAlignment="center" class="label cart__summary"></Label>
-<!--    <StackLayout borderColor="#a52a2a" borderWidth="1">-->
-    <ScrollView scrollBarIndicatorVisible="false">
-        <GridLayout rows="auto" columns="* * * * *" borderColor="blue" borderWidth="1">
+<ScrollView scrollBarIndicatorVisible="false">
+    <FlexboxLayout flexDirection="column" flexWrap="wrap" class="cart__summary-table">
+        <Label text="Summary" class="label cart__summary" alignSelf="center"></Label>
+        <GridLayout rows="auto" columns="* * * * *">
             <Label text="Name" row="0" colSpan="2" class="cart__summary-table-heading"></Label>
             <Label text="Price" row="0" col="2" class="cart__summary-table-heading"></Label>
             <Label text="Quantity" row="0" col="3" class="cart__summary-table-heading"></Label>
             <Label text="Total Price" row="0" col="4" class="cart__summary-table-heading"></Label>
+        </GridLayout>
+        <StackLayout class="hr"></StackLayout>
+        <GridLayout rows="auto, auto" columns="* * * * *" *ngFor="let p of productsInCart">
+            <Label text="{{p.name}}" row="0" colSpan="2" class="cart__summary-table-body"></Label>
+            <Label text="{{p.price}}" row="0" col="2" class="cart__summary-table-body"></Label>
+            <Label text="{{p.quantity}}" row="0" col="3" class="cart__summary-table-body"></Label>
+            <Label text="{{p.price*p.quantity}}" row="0" col="4" class="cart__summary-table-body"></Label>
+            <StackLayout row="1" colSpan="5" class="hr"></StackLayout>
         </GridLayout>
 
-        <GridLayout rows="auto" columns="* * * * *" borderColor="blue" borderWidth="1" *ngFor="let p of productsInCart">
-            <Label text="Name" row="0" colSpan="2" class="cart__summary-table-heading"></Label>
-            <Label text="Price" row="0" col="2" class="cart__summary-table-heading"></Label>
-            <Label text="Quantity" row="0" col="3" class="cart__summary-table-heading"></Label>
-            <Label text="Total Price" row="0" col="4" class="cart__summary-table-heading"></Label>
+        <GridLayout rows="auto" columns="* * * * *">
+            <Label row="0" col="4" colSpan="2" text="Total: {{grandTotal}}" class="grand__total"></Label>
         </GridLayout>
-    </ScrollView>
-<!--    </StackLayout>-->
-</StackLayout>
+    </FlexboxLayout>
+</ScrollView>

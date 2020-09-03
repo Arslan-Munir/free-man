@@ -6,16 +6,15 @@
 
         <GridLayout row="0" height="150">
             <Carousel
-
                     [items]="images"
-                    android:indicatorAnimation="THIN_WORM"
-                    indicatorColor="#595d62"
-                    indicatorOffset="0, 15"
-                    showIndicator="true"
-                    ios:finite="true"
-                    ios:autoPagingInterval="5">
+                    android:indicatorAnimation="thin_worm" indicatorColor="#595d62" indicatorOffset="0, 20"
+                    showIndicator="true">
                 <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
-                    <Image class="m-2 carousel__image" [src]="item" stretch="aspectFill"></Image>
+                    <GridLayout>
+                        <NSImg class="m-2 carousel__image" [src]="item"
+                               showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                    </GridLayout>
                 </CarouselItem>
             </Carousel>
         </GridLayout>
@@ -29,7 +28,9 @@
                             class="recommended__item"
                             *ngFor="let product of products"
                             (tap)="goToProduct(product)">
-                        <Image src="{{product.mainPhoto}}" class="recommended__item_image" stretch="aspectFill"></Image>
+                        <NSImg src="{{product.mainPhoto}}" class="recommended__item_image"
+                               showProgressBar="true" progressBarColor="blue" roundedCornerRadius="50"
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
                         <StackLayout class="recommended__item_details">
                             <Label
                                     class="label home__label recommended__item_name"
@@ -55,7 +56,9 @@
                     showIndicator="true">
                 <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
                     <GridLayout>
-                        <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>
+                        <NSImg class="m-2 carousel__image" [src]="item"
+                               showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
                     </GridLayout>
                 </CarouselItem>
             </Carousel>
@@ -68,7 +71,9 @@
                     showIndicator="true">
                 <CarouselItem *ngFor="let item of images" verticalAlignment="middle">
                     <GridLayout>
-                        <Image class="carousel__image" [src]="item" stretch="aspectFill"></Image>
+                        <NSImg class="m-2 carousel__image" [src]="item"
+                               showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
                     </GridLayout>
                 </CarouselItem>
             </Carousel>
@@ -80,7 +85,10 @@
                     class="all__items"
                     *ngFor="let product of products"
                     (tap)="goToProduct(product)">
-                <Image src="{{product.mainPhoto}}" class="recommended__item_image" stretch="aspectFill"></Image>
+
+                <NSImg src="{{product.mainPhoto}}" class="recommended__item_image"
+                       showProgressBar="true" progressBarColor="blue" roundedCornerRadius="50"
+                       roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
                 <StackLayout class="recommended__item_details">
                     <Label
                             class="label home__label recommended__item_name"

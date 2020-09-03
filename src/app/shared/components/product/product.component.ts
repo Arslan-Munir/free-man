@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
             this.product.quantity = 1;
             this.toDisplayPhoto = this.product.mainPhoto;
             this.cartService.notifyForCartCount();
-        }, 1000);
+        }, 0);
     }
 
     changePhoto(url: string) {

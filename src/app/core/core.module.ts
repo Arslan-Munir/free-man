@@ -9,6 +9,12 @@ import { SharedModule } from "~/app/shared/shared.module";
 import { TNSImageModule } from "nativescript-image/angular";
 import * as imageModule from "nativescript-image";
 import * as applicationModule from "@nativescript/core/application";
+import * as platform from "tns-core-modules/platform";
+declare var GMSServices: any;
+
+if (platform.isIOS) {
+    GMSServices.provideAPIKey("AIzaSyCnxLSEGpzzg4SzEv-LFy5UZixZAt-uq58");
+}
 
 if (applicationModule.android) {
     applicationModule.on(applicationModule.launchEvent, () => {

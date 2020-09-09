@@ -1,14 +1,20 @@
 <ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
 <StackLayout>
     <Label text="Category works" *ngIf="!busy"></Label>
-    <CheckBox text="CheckBox Label" [checked]="isCheckConfirm" (checkedChange)="toggleCheckConfirm()"></CheckBox>
+    <CheckBox text="CheckBox Label" [checked]="isCheckConfirm" (checkedChange)="toggleCheckConfirm()" fillColor="#dd44ef"></CheckBox>
+    <CheckBox text="CheckBox Label" boxType="circle" checked="true"></CheckBox>
     <Label [text]="isCheckConfirm"></Label>
 
     <StackLayout>
         <Label class="p-10" text="Tap either the buttons or the labels. You can even unselect the radiobutton selection." textWrap="true"></Label>
         <StackLayout class="p-10" *ngFor="let option of radioOptions">
             <StackLayout orientation="horizontal" verticalAlignment="center">
-                <CheckBox #elem [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox" boxType="circle"></CheckBox>
+                <CheckBox
+                    boxType="circle"
+                    fillColor="#dd44ef"
+                    #elem
+                    [checked]="option.selected"
+                    (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)"></CheckBox>
                 <StackLayout verticalAlignment="center">
                     <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
                 </StackLayout>

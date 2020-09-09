@@ -10,6 +10,7 @@ import { TNSImageModule } from "nativescript-image/angular";
 import * as imageModule from "nativescript-image";
 import * as applicationModule from "@nativescript/core/application";
 import * as platform from "tns-core-modules/platform";
+import { TNSCheckBoxModule } from "@nstudio/nativescript-checkbox/angular";
 declare var GMSServices: any;
 
 if (platform.isIOS) {
@@ -29,7 +30,8 @@ if (applicationModule.android) {
         CoreRoutingModule,
         NativeScriptModule,
         SharedModule,
-        TNSImageModule
+        TNSImageModule,
+        TNSCheckBoxModule
     ],
     declarations: [
         LandingPageComponent,

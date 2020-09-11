@@ -44,7 +44,13 @@ export class HomeComponent implements OnInit {
     }
 
     goToProduct(product: Product) {
-        this.routerExtensions.navigateByUrl(`/product/${product.id}`);
+        this.routerExtensions.navigateByUrl(`/product/${product.id}`, {
+            animated: true,
+            transition: {
+                name: "slide",
+                duration: 500
+            }
+        });
     }
 
 }

@@ -10,7 +10,7 @@ registerElement("MapView", () => MapView);
     selector: "sign-in",
     templateUrl: "./sign-in.component.html"
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
     latitude = 33.6844;
     longitude = 73.0479;
     zoom = 20;
@@ -20,9 +20,11 @@ export class SignInComponent {
     tilt = 0;
     padding = [40, 40, 40, 40];
     mapView: MapView;
-    finalLatitude = 0; finalLongitude = 0;
+    finalLatitude = 0;
+    finalLongitude = 0;
+    isMapOpen = false;
 
-    constructor() {
+    ngOnInit() {
         this.getCurrentLocation();
     }
 
@@ -44,8 +46,8 @@ export class SignInComponent {
         this.mapView.addMarker(marker);
     }
 
-    show() {
-        alert(this.finalLatitude + "......." + this.finalLongitude);
+    toggleMapOpenView() {
+        this.isMapOpen = !this.isMapOpen;
     }
 
     private getCurrentLocation() {

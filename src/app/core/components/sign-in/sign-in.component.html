@@ -1,10 +1,16 @@
-<GridLayout rows="*,auto, auto">
 
+<GridLayout rows="auto auto auto">
+    <TextField row="0" text="Name"></TextField>
+    <TextField row="1" text="Address"></TextField>
+    <Button row="2" text="Confirm Location" (tap)="toggleMapOpenView()"></Button>
+</GridLayout>
+
+<GridLayout rows="*,auto, auto" *ngIf="isMapOpen">
     <MapView row="0" [latitude]="latitude" [longitude]="longitude"
              [zoom]="zoom" [minZoom]="minZoom" [maxZoom]="maxZoom" [bearing]="bearing"
              [tilt]="tilt" i-padding="50,50,50,50" [padding]="padding" (mapReady)="onMapReady($event)"
              (cameraMove)="onCameraMove($event)"></MapView>
 
-    <Button row="1" text="Done" (tap)="show()"></Button>
+    <Button row="1" text="Done" (tap)="toggleMapOpenView()"></Button>
 </GridLayout>
 

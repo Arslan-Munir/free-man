@@ -5,20 +5,19 @@
 
 <ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
 
-<GridLayout rows="*,auto" columns="*" *ngIf="!busy">
-
+<GridLayout rows="*,auto" columns="*" *ngIf="!busy" [ngClass]="onVariation? 'on-variation' : ''">
     <ScrollView scrollBarIndicatorVisible="false">
         <FlexboxLayout flexDirection="column" row="0" col="0">
             <FlexboxLayout flexDirection="column">
-<!--                <Image class="main-photo" src="{{toDisplayPhoto}}" stretch="aspectFill"></Image>-->
+                <!--                <Image class="main-photo" src="{{toDisplayPhoto}}" stretch="aspectFill"></Image>-->
                 <NSImg src="{{toDisplayPhoto}}" class="main-photo"
                        showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
                        roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
 
                 <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
                     <StackLayout orientation="horizontal">
-<!--                        <Image class="photo" src="{{image}}" stretch="aspectFill" *ngFor="let image of product.images;"-->
-<!--                               (tap)="changePhoto(image)"></Image>-->
+                        <!--                        <Image class="photo" src="{{image}}" stretch="aspectFill" *ngFor="let image of product.images;"-->
+                        <!--                               (tap)="changePhoto(image)"></Image>-->
 
                         <NSImg src="{{image}}" class="photo" *ngFor="let image of product.images;"
                                showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
@@ -33,9 +32,11 @@
                     <Label dock="left" text="{{product.name}}" class="label name pull-left"></Label>
                     <FlexboxLayout class="pull-right" dock="right" alignItems="center">
                         <Label text="Quantity" class="m-r-4 label quantity"></Label>
-                        <Label text="&#xf055;" class="m-r-4 change__quantity-icon fas" (tap)="increaseQuantityByOne()"></Label>
+                        <Label text="&#xf055;" class="m-r-4 change__quantity-icon fas"
+                               (tap)="increaseQuantityByOne()"></Label>
                         <Label text="{{product.quantity}}" class="m-r-4 label quantity__count"></Label>
-                        <Label text="&#xf056;" class="change__quantity-icon fas" (tap)="decreaseQuantityByOne()"></Label>
+                        <Label text="&#xf056;" class="change__quantity-icon fas"
+                               (tap)="decreaseQuantityByOne()"></Label>
                     </FlexboxLayout>
                 </DockLayout>
                 <Label text="{{product.price}}" class="label price"></Label>
@@ -48,7 +49,42 @@
             row="1" col="0"
             class="btn-primary btn-cart"
             text="Add to cart"
-            (tap)="addToCart()">
+            (tap)="onVariation = true">
     </Button>
 
 </GridLayout>
+
+<DockLayout *ngIf="onVariation" horizontalAlignment="center" verticalAlignment="center"
+            class="m-15 background chose-variation">
+    <GridLayout dock="top" rows="auto auto auto" columns="* * * * * *">
+        <Label colSpan="6" row="0" col="6" class="fas close-variation" text="&#xf057;"
+               (tap)="closeVariation()"></Label>
+        <Label row="1" col="0" text=""></Label>
+        <Label class="label variation-name" row="1" col="1" text="Name"></Label>
+        <Label class="label variation-name" row="1" col="2" text="Quantity"></Label>
+        <Label class="label variation-name" row="1" col="3" text="Price"></Label>
+        <Label class="label variation-name" row="1" col="4" text="Total"></Label>
+
+        <Button
+                colSpan="6"
+                row="2" col="0"
+                class="btn-primary btn-cart"
+                text="Confirm"
+                (tap)="addToCart(); onVariation=false;">
+        </Button>
+    </GridLayout>
+</DockLayout>
+
+<!--<GridLayout-->
+<!--        rows="* * * * * *" columns="*"-->
+<!--        *ngIf="onVariation" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#a52a2a">-->
+
+<!--        <GridLayout row="0" rows="*" columns="* * * * *">-->
+<!--            <Label row="0" col="0" text=""></Label>-->
+<!--            <Label row="0" col="1" text="Name"></Label>-->
+<!--            <Label row="0" col="2" text="Quantity"></Label>-->
+<!--            <Label row="0" col="3" text="Price"></Label>-->
+<!--            <Label row="0" col="4" text="Total Price"></Label>-->
+<!--        </GridLayout>-->
+
+<!--</GridLayout>-->

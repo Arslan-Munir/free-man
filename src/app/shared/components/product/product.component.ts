@@ -14,6 +14,7 @@ export class ProductComponent implements OnInit {
     productId = 0;
     product: Product;
     toDisplayPhoto = "";
+    onVariation = false;
 
     constructor(private route: ActivatedRoute, private productService: ProductService,
                 private cartService: CartService) {
@@ -32,6 +33,10 @@ export class ProductComponent implements OnInit {
 
     changePhoto(url: string) {
         this.toDisplayPhoto = url;
+    }
+
+    closeVariation() {
+        this.onVariation = false;
     }
 
     addToCart() {

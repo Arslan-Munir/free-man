@@ -10,11 +10,13 @@ import { LabelMaxLinesDirective } from "~/app/shared/directives/label-max-lines.
 import { ProductComponent } from "~/app/shared/components/product/product.component";
 import { CartComponent } from "~/app/shared/components/cart/cart.component";
 import { OrderingFormComponent } from "~/app/shared/components/ordering-form/ordering-form.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
         SharedRoutingModule,
-        NativeScriptModule
+        NativeScriptModule,
+        CommonModule
     ],
     declarations: [
         BrowseComponent,

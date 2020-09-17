@@ -25,12 +25,12 @@
             <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
                 <StackLayout orientation="horizontal">
                     <StackLayout
-                            class="recommended__item"
+                            class="product recommended__item"
                             *ngFor="let product of products"
                             (tap)="goToProduct(product)">
                         <NSImg src="{{product.mainPhoto}}" class="recommended__item_image"
-                               showProgressBar="true" progressBarColor="blue" roundedCornerRadius="50"
-                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                               roundedCornerRadius="10"
+                               roundBottomLeft="true" roundBottomRight="true" ></NSImg>
                         <StackLayout class="recommended__item_details">
                             <Label
                                     class="label home__label recommended__item_name"
@@ -82,13 +82,13 @@
         <FlexboxLayout row="4" class="m-t-15"
                        flexWrap="wrap" justifyContent="space-around">
             <StackLayout
-                    class="all__items"
+                    class="product all__items"
                     *ngFor="let product of products"
                     (tap)="goToProduct(product)">
 
                 <NSImg src="{{product.mainPhoto}}" class="recommended__item_image"
-                       showProgressBar="true" progressBarColor="blue" roundedCornerRadius="50"
-                       roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                       roundedCornerRadius="10"
+                       roundBottomLeft="true" roundBottomRight="true"></NSImg>
                 <StackLayout class="recommended__item_details">
                     <Label
                             class="label home__label recommended__item_name"

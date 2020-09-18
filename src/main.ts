@@ -2,5 +2,10 @@
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app/app.module";
+import { registerElement } from "@nativescript/angular/element-registry";
+import { LottieView } from "nativescript-lottie";
+
+registerElement("Ripple", () => require("nativescript-ripple").Ripple);
+registerElement("LottieView", () => LottieView);
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);

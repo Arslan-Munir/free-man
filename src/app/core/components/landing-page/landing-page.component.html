@@ -24,16 +24,24 @@
     </StackLayout>
 
     <GridLayout row="1" rows="*" columns="*,*,*," borderTopWidth="1" borderTopColor="#a9a9a9">
-        <StackLayout orientation="vertical" row="0" col="0" (tap)="changeTabView(1, 'Home')">
-            <Label class="page__content-icon tab__view-icon fas" text="&#xf015;"  [ngClass]="{'is-selected' : tabOption === 1}"></Label>
-        </StackLayout>
+        <Ripple rippleColor="#f5f5f5" borderRadius="100" width="60">
+            <StackLayout orientation="vertical" row="0" col="0" (tap)="changeTabView(1, 'Home')">
+                <Label
+                        class="page__content-icon tab__view-icon fas"
+                        text="&#xf015;"
+                        [ngClass]="{'is-selected' : tabOption === 1}">
+                </Label>
+            </StackLayout>
+        </Ripple>
 
         <StackLayout orientation="vertical" row="0" col="1" (tap)="changeTabView(2, 'Categories')">
-            <Label class="page__content-icon tab__view-icon fas" text="&#xf022;" [ngClass]="{'is-selected' : tabOption === 2}"></Label>
+            <Label class="page__content-icon tab__view-icon fas" text="&#xf022;"
+                   [ngClass]="{'is-selected' : tabOption === 2}"></Label>
         </StackLayout>
 
         <StackLayout orientation="vertical" row="0" col="2" (tap)="changeTabView(3, 'Accounts')">
-            <Label class="page__content-icon tab__view-icon fas" text="&#xf500;" [ngClass]="{'is-selected' : tabOption === 3}"></Label>
+            <Label class="page__content-icon tab__view-icon fas" text="&#xf500;"
+                   [ngClass]="{'is-selected' : tabOption === 3}"></Label>
         </StackLayout>
     </GridLayout>
 </GridLayout>

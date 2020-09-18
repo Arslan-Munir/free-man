@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
 
             this.products = this.productService.getAll();
             this.busy = false;
-        }, 0);
+        }, 5000);
     }
 
     goToProduct(product: Product) {

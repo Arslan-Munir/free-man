@@ -1,12 +1,26 @@
+@keyframes change_opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-.home__label{
+.change_opacity {
+  animation-name: change_opacity;
+  animation-duration: 1s;
+}
+
+.home__label {
   color: #686874;
 }
-.main__container{
+
+.main__container {
   margin-top: 5;
 }
 
-.carousel__image{
+.carousel__image {
   border-radius: 5;
 }
 
@@ -15,23 +29,23 @@
   font-weight: bold;
 }
 
-.recommended__item{
+.recommended__item {
   width: 125;
   margin-right: 10;
   border-radius: 5;
 }
 
-.all__items{
+.all__items {
   width: 100;
 }
 
-.recommended__item_image{
+.recommended__item_image {
   height: 100;
   margin: 5;
   //border-radius: 15;
 }
 
-.recommended__item_details{
+.recommended__item_details {
   margin-left: 5;
 }
 
@@ -41,7 +55,7 @@
   margin: -2 0 0 0;
 }
 
-.recommended__item_variations{
+.recommended__item_variations {
   margin: -10 0 0 0;
 }
 

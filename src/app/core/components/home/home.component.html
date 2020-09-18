@@ -1,8 +1,15 @@
-<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>
+<!--<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>-->
+<StackLayout>
+    <LottieView width="100" height="150" src="loading-animation.json" [loop]="true" [autoPlay]="true"
+    *ngIf="busy">
+    </LottieView>
+</StackLayout>
 
 <ScrollView *ngIf="!busy">
 
-    <GridLayout rows="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto" class="m-5">
+    <GridLayout
+            rows="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto"
+            class="m-5 change_opacity">
 
         <GridLayout row="0" height="150">
             <Carousel
@@ -13,7 +20,8 @@
                     <GridLayout>
                         <NSImg class="m-2 carousel__image" [src]="item"
                                showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
-                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true"
+                               roundTopRight="true"></NSImg>
                     </GridLayout>
                 </CarouselItem>
             </Carousel>
@@ -30,7 +38,7 @@
                             (tap)="goToProduct(product)">
                         <NSImg src="{{product.mainPhoto}}" class="recommended__item_image"
                                roundedCornerRadius="10"
-                               roundBottomLeft="true" roundBottomRight="true" ></NSImg>
+                               roundBottomLeft="true" roundBottomRight="true"></NSImg>
                         <StackLayout class="recommended__item_details">
                             <Label
                                     class="label home__label recommended__item_name"
@@ -58,7 +66,8 @@
                     <GridLayout>
                         <NSImg class="m-2 carousel__image" [src]="item"
                                showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
-                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true"
+                               roundTopRight="true"></NSImg>
                     </GridLayout>
                 </CarouselItem>
             </Carousel>
@@ -73,7 +82,8 @@
                     <GridLayout>
                         <NSImg class="m-2 carousel__image" [src]="item"
                                showProgressBar="true" progressBarColor="blue" roundedCornerRadius="15"
-                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true" roundTopRight="true"></NSImg>
+                               roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true"
+                               roundTopRight="true"></NSImg>
                     </GridLayout>
                 </CarouselItem>
             </Carousel>

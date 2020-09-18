@@ -14,5 +14,6 @@ export class LandingPageComponent {
     changeTabView(option: TabOptions, actionBarText: string) {
         this.text = actionBarText;
         this.tabOption = option;
+        console.log(this.tabOption);
     }
 }

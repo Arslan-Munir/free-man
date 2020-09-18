@@ -31,6 +31,8 @@
     "nativescript-geolocation": "^5.1.0",
     "nativescript-google-maps-sdk": "^2.9.1",
     "nativescript-image": "^3.0.12",
+    "nativescript-lottie": "^4.0.1",
+    "nativescript-ripple": "^2.2.1",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.4.0",

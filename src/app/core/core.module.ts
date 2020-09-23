@@ -12,6 +12,7 @@ import * as applicationModule from "@nativescript/core/application";
 import * as platform from "tns-core-modules/platform";
 import { TNSCheckBoxModule } from "@nstudio/nativescript-checkbox/angular";
 import { CommonModule } from "@angular/common";
+import { IntroComponent } from "~/app/core/components/intro/intro.component";
 
 declare var GMSServices: any;
 
@@ -38,6 +39,7 @@ if (applicationModule.android) {
     ],
     declarations: [
         LandingPageComponent,
+        IntroComponent,
         HomeComponent,
         CategoryComponent,
         SignInComponent

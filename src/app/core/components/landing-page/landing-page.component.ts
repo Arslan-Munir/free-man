@@ -16,6 +16,7 @@ export class LandingPageComponent {
     openDrawer = NavigationOptions.OpenDrawer;
 
     constructor(private page: Page) {
+        // page.actionBarHidden = true;
         const intro = appSettings.getString("showIntro");
         if (!intro) {
             appSettings.setString("showIntro", "true");
@@ -32,9 +33,10 @@ export class LandingPageComponent {
         this.tabOption = option;
     }
 
-    endIntro() {
-        appSettings.setString("showIntro", "false");
-        this.showIntro = false;
-        this.page.actionBarHidden = false;
+    completeIntro(isIntroCompleted: boolean) {
+        if (isIntroCompleted) {
+            this.showIntro = false;
+            this.page.actionBarHidden = false;
+        }
     }
 }

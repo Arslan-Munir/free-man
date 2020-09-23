@@ -5,8 +5,8 @@
         text="{{text}}"
 ></action-bar>
 
-<GridLayout>
-    <Button text="Toggle" *ngIf="showIntro" (tap)="endIntro()"></Button>
+<GridLayout *ngIf="showIntro">
+    <intro (complete-intro)="completeIntro($event)"></intro>
 </GridLayout>
 
 <GridLayout

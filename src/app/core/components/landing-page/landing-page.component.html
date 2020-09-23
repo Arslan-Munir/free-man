@@ -5,7 +5,14 @@
         text="{{text}}"
 ></action-bar>
 
-<GridLayout class="page__content background" rows="*,auto">
+<GridLayout>
+    <Button text="Toggle" *ngIf="showIntro" (tap)="endIntro()"></Button>
+</GridLayout>
+
+<GridLayout
+        class="page__content background"
+        rows="*,auto"
+        *ngIf="!showIntro">
 
     <StackLayout row="0">
         <GridLayout

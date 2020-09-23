@@ -1,8 +1,8 @@
 <!--<ActivityIndicator [busy]="busy" class="activity-indicator"></ActivityIndicator>-->
-<StackLayout>
-    <LottieView width="100" height="150" src="loading-animation.json" [loop]="true" [autoPlay]="true"
-    *ngIf="busy">
-    </LottieView>
+
+
+<StackLayout *ngIf="busy">
+    <LottieView width="100" height="150" src="loading-animation.json" [loop]="true" [autoPlay]="true"></LottieView>
 </StackLayout>
 
 <ScrollView *ngIf="!busy">

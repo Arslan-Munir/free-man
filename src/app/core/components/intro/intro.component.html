@@ -1,2 +1,27 @@
+<GridLayout>
+    <Carousel
+            height="100%"
+            width="100%"
+            android:indicatorAnimation="thin_worm" indicatorColor="#595d62" indicatorOffset="0, -10"
+            showIndicator="true">
+        <CarouselItem verticalAlignment="middle">
+            <GridLayout backgroundColor="#a9a9a9">
+                <LottieView
+                        width="100" height="150"
+                        src="loading-animation.json"
+                        [loop]="true" [autoPlay]="true">
+                </LottieView>
+            </GridLayout>
+        </CarouselItem>
 
-<Button text="Toggle Intro" (tap)="endIntro()"></Button>
+        <CarouselItem verticalAlignment="middle">
+            <GridLayout>
+                <NSImg class="m-15" src="https://dummyimage.com/200x200/59d6d4/fff.jpg"
+                       roundedCornerRadius="15"
+                       roundBottomLeft="true" roundBottomRight="true" roundTopLeft="true"
+                       roundTopRight="true"></NSImg>
+            </GridLayout>
+        </CarouselItem>
+    </Carousel>
+<!--    <Button text="Toggle Intro" (tap)="endIntro()"></Button>-->
+</GridLayout>
